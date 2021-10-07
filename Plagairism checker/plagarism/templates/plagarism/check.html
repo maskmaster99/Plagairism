@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>plagarism checker</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{%static 'plagarism/css/style.css' %}">
+  </head>
+  <body>
+    <h1>check content</h1>
+    <form class="form" action="{% url 'CheckPlag' %}" method="post">
+      {% csrf_token %}
+      <p>
+        <textarea name="mname" rows="8" cols="80" placeholder="enter content here"></textarea>
+        <textarea name="cname" rows="8" cols="80" placeholder="enter content here"></textarea>
+
+      </p>
+      <input type="submit" name="" value="submit">
+
+    </form>
+
+
+  </body>
+</html>

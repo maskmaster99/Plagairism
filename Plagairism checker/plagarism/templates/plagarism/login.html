@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>login</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{%static 'plagarism/css/style.css' %}">
+  </head>
+  <body>
+    <h1 >Login Here!!</h1>
+    <form class="form" action="{% url 'AuthenticateUser' %}" method="post">
+      {% csrf_token %}
+      <p>
+        <input type="text" name="username" value="" placeholder="enter name">
+      </p>
+      <p>
+        <input type="password" name="userpassword" value="" placeholder="enter password">
+      </p>
+      <p>
+        <input type="submit" name="" value="submit" placeholder="submit here">
+        <a href="{% url 'Register' %}">register</a>
+      </p>
+
+    </form>
+
+  </body>
+</html>
